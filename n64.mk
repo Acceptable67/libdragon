@@ -6,6 +6,7 @@ N64_ROM_SAVETYPE = # Supported savetypes: none eeprom4k eeprom16 sram256k sram76
 N64_ROM_RTC = # Set to true to enable the Joybus Real-Time Clock
 N64_ROM_REGIONFREE = # Set to true to allow booting on any console region
 
+N64_INST=/usr/local
 N64_ROOTDIR = $(N64_INST)
 N64_BINDIR = $(N64_ROOTDIR)/bin
 N64_INCLUDEDIR = $(N64_ROOTDIR)/mips64-elf/include
@@ -31,7 +32,7 @@ N64_AUDIOCONV = $(N64_BINDIR)/audioconv64
 
 N64_CFLAGS =  -march=vr4300 -mtune=vr4300 -I$(N64_INCLUDEDIR)
 N64_CFLAGS += -falign-functions=32 -ffunction-sections -fdata-sections
-N64_CFLAGS += -DN64 -O2 -Wall -Werror -Wno-error=deprecated-declarations -fdiagnostics-color=always
+N64_CFLAGS += -DN64 -O2 -Wall -Wno-error=deprecated-declarations -fdiagnostics-color=always
 N64_ASFLAGS = -mtune=vr4300 -march=vr4300 -Wa,--fatal-warnings
 N64_LDFLAGS = -L$(N64_LIBDIR) -ldragon -lm -ldragonsys -Tn64.ld --gc-sections --wrap __do_global_ctors
 
@@ -51,7 +52,7 @@ CFLAGS+=-MMD     # automatic .d dependency generationc
 CXXFLAGS+=-MMD     # automatic .d dependency generationc
 ASFLAGS+=-MMD    # automatic .d dependency generation
 
-N64_CXXFLAGS := $(N64_CFLAGS) -std=c++11
+N64_CXXFLAGS := $(N64_CFLAGS) -std=c++20
 N64_CFLAGS += -std=gnu99
 
 # Change all the dependency chain of z64 ROMs to use the N64 toolchain.

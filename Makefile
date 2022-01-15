@@ -85,6 +85,7 @@ install: install-mk libdragon
 	install -Cv -m 0644 include/controller.h $(INSTALLDIR)/mips64-elf/include/controller.h
 	install -Cv -m 0644 include/rtc.h $(INSTALLDIR)/mips64-elf/include/rtc.h
 	install -Cv -m 0644 include/eeprom.h $(INSTALLDIR)/mips64-elf/include/eeprom.h
+	install -Cv -m 0644 include/LibN64.h $(INSTALLDIR)/mips64-elf/include/LibN64.h
 	install -Cv -m 0644 include/eepromfs.h $(INSTALLDIR)/mips64-elf/include/eepromfs.h
 	install -Cv -m 0644 include/tpak.h $(INSTALLDIR)/mips64-elf/include/tpak.h
 	install -Cv -m 0644 include/graphics.h $(INSTALLDIR)/mips64-elf/include/graphics.h
